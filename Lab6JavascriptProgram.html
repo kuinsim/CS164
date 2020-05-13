@@ -1,0 +1,29 @@
+<html>
+<body>
+<button onclick="buttonFunction()"> Click here! </button>
+<h1 id="buttonHeading"> </h1>
+<p id="buttonParagraph"> </p>
+<script>
+function buttonFunction() 
+{
+	document.getElementById("buttonHeading").innerHTML = "Suin Kim's Lab 6 Javascript Program";
+
+	for (var i = 1; i < 10; i++) 
+ 	{
+   		for (var j = 0; j < 10; j++) 
+		{
+        		for (var k = 0; k < 10; k++)
+        		{
+          			var powSum = ((i * i * i) + (j * j * j) + (k * k * k));
+          			var sum = ((i * 100) + (j * 10) +  k);
+				if (powSum == sum) 
+          			{ 
+    				document.getElementById("buttonParagraph").innerHTML = powSum + "<br>";
+				}
+         		}
+       		}
+    	}
+}
+</script>
+</body>
+</html>

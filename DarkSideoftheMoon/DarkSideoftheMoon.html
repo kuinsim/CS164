@@ -1,0 +1,78 @@
+<html>
+<body background="background.jpg">
+<head>
+    <title> Dark Side of the Moon </title>
+</head>
+<body background="background.jpg">
+<center>
+<h1 style="color:yellow;"> Dark Side of the Moon </h1>
+<h2 style="color:yellow;"> Suin Kim CS-164-65h </h2>
+<img src="eclipses.png" alt="Eclipses" width="30%" height="20%">
+<br> </br> 
+<p style="color:yellow;"> Input numbers for respective values or pre-load estimated values from August 21, 2017. </p>
+<button type="button" onclick="preload();"> Pre-load Values </button>
+<br></br>
+<table border="1" style="width:60%;">
+    <tr>
+        <td style="color:yellow;" width="12%" align="center">Diameter of Earth</td>
+        <td style="color:yellow;" width="12%" align="center">Diameter of Moon</td>
+        <td style="color:yellow;" width="12%" align="center">Diameter of Sun</td>
+        <td style="color:yellow;" width="12%" align="center">Distance to Moon</td>
+        <td style="color:yellow;" width="12%" align="center">Distance to Sun</td>
+    </tr>
+    <tr>
+        <td width="12%" align="center"> <textarea id="diamEarth"> </textarea> </td>
+        <td width="12%" align="center"> <textarea id="diamMoon"> </textarea> </td>
+        <td width="12%" align="center"> <textarea id="diamSun"> </textarea> </td>
+        <td width="12%" align="center"> <textarea id="distMoon"> </textarea> </td>
+        <td width="12%" align="center"> <textarea id="distSun"> </textarea> </td>
+    </tr>
+</table>
+<p style="color:yellow;"> Press the "Calculate Totality" button to get the possibility of a total eclipse and the size of totality. </p>
+<button type="button" onClick="calculateTotality();">Calculate Totality</button>
+<p id="totalityAnswer" style="color:yellow;"> </p>
+<br></br>
+<img src="nasaeclipse.jpg" width="30%" height="20%">
+</center>
+</body>
+
+<script>
+function preload() 
+{
+  document.getElementById("diamEarth").value = 7917.5;
+  document.getElementById("diamMoon").value = 2159;
+  document.getElementById("diamSun").value = 864575.9;
+  document.getElementById("distMoon").value = 231691.298;
+  document.getElementById("distSun").value = 94259835.0632;
+}
+    
+function calculateTotality() 
+{
+  var diamEarth = document.getElementById("diamEarth").value;
+  var diamMoon = document.getElementById("diamMoon").value;
+  var diamSun = document.getElementById("diamSun").value;
+  var distMoon = document.getElementById("distMoon").value;
+  var distSun = document.getElementById("distSun").value;
+  var size = document.getElementById("totalityAnswer");
+
+  var surfSun = distSun - 0.5*diamEarth - 0.5*diamSun;
+
+  var surfMoon = distMoon - 0.5*diamEarth - 0.5*diamMoon;
+
+  var distMoontoSun = surfSun - surfMoon - diamMoon;
+
+  var bigDist = ((-0.25*(diamSun * diamSun)) - (0.5*(diamSun * distMoontoSun)) - (0.25*(diamMoon * diamSun))) / ((0.5 * diamMoon) - (0.5 * diamSun));
+
+  var total = (diamSun * (bigDist - surfSun - 0.5 * diamSun)) / bigDist;
+
+  if (surfSun <= (bigDist - 0.5 * diamSun)) 
+  {
+    size.innerHTML = "This is a total eclipse." + " \t The diameter of totality is " + total + " miles.";
+  }
+  else 
+  {
+    size.innerHTML = "This is an annular eclipse.";
+  }
+}
+</script>
+</html>

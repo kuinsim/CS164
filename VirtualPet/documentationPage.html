@@ -1,0 +1,34 @@
+<html>
+<title> Virtual Pet Documentation Page</title>
+<body>
+<center> <h1> Virtual Pet Documentation Page </h1> <h2> Suin Kim CS-164-65h </h2> </center>
+<a href="http://www.pages.drexel.edu/~sk3665/virtualPet.html"> Link to virtual pet </a>
+<h3> List of States </h3>
+<table border="1">
+    <tr> <th> States </th> </tr>
+    <tr> <td> Relaxed </td></tr>
+    <tr> <td> Hungry </td></tr>
+    <tr> <td> Happy </td></tr>
+    <tr> <td> Sleepy </td></tr>
+    <tr> <td> Angry </td></tr>
+    <tr> <td> Sad </td></tr>
+</table>
+<h3> Backstory</h3>
+<p> A couple of weeks ago, I went to a Philadelphia 76ers game. They were playing the lower-tier Utah Jazz that night. After playing for several minutes, I could tell that Joel Embiid was exhausted. So, when he was finally sitting on the bench, I came down to the first row and offered him an ice-cold gatorade. In the blink of an eye, he snatched the gatorade from my hands. After watching him devour the gatorade in a matter of seconds, I wished him luck and returned back to my seat. However, as the game was closing out, I noticed that he was not in the game anymore. However, I did not think much of it and proceeded to leave the arena once the final buzzer went off. As I was walking back to the subway, I noticed that someone tall was following me. It was Joel Embiid! It turns out that the gatorade I gave him was his favorite flavor. To this day, Joel Embiid follows me around. We occasionally play a game of one on one basketball. If he wins, I give him a gatorade. </p>
+<h3> State Machine </h3>
+<table border="1"> 
+    <tr> <th> Current State </th> <td> </td> <td> </td> <td> </td> <td> </td> <th> Stimuli/Actions </th> <td> </td> <td> </td> <td> </td> </tr>
+    <tr> <td> </td> <td> Feed </td> <td> Sleep </td> <td> Pet </td> <td> Engage In Banter </td> <td> Play One On One </td> <td> High Five </td> <td> Wait 30 Seconds </td> <td> Wait 60 Seconds </td> </tr>
+    <tr> <td> Relaxed </td> <td> Relaxed </td> <td> Relaxed </td> <td> Angry </td> <td> Happy/Angry/Sad </td> <td> Happy/Sad </td> <td> Happy </td> <td> Hungry </td> <td> Sleepy </td> </tr>
+    <tr> <td> Hungry </td> <td> Happy </td> <td> Hungry </td> <td> Angry </td> <td> Angry/Sad </td> <td> Hungry </td> <td> Hungry </td> <td> Hungry </td> <td> Sleepy </td> </tr>
+    <tr> <td> Happy </td> <td> Happy </td> <td> Happy </td> <td> Angry </td> <td> Happy/Angry/Sad </td> <td> Happy/Sad </td> <td> Happy </td> <td> Hungry </td> <td> Sleepy </td> </tr>
+    <tr> <td> Sleepy </td> <td> Sleepy </td> <td> Happy </td> <td> Angry </td> <td> Angry/Sad </td> <td> Sleepy </td> <td> Sleepy </td> <td> Hungry </td> <td> Sleepy </td> </tr>
+    <tr> <td> Angry </td> <td> Relaxed </td> <td> Relaxed </td> <td> Angry </td> <td> Angry/Sad </td> <td> Happy/Sad </td> <td> Happy </td> <td> Hungry </td> <td> Sleepy </td> </tr>
+    <tr> <td> Sad </td> <td> Relaxed </td> <td> Relaxed </td> <td> Angry </td> <td> Angry/Sad </td> <td> Happy/Sad </td> <td> Happy </td> <td> Hungry </td> <td> Sleepy </td> </tr>
+</table>
+<h3> Explanation of Behavior and State Transitions </h3>
+<p> Although Joel Embiid is a great pet to have, it is important that he is properly taken care of. First off, he is not like most pets, for obvious reasons. He does not like it when people pet him because he does not want to be treated like a child. Doing so will always make him angry. Engaging in banter results in one of two, or one of three, transitions of state (mood), depending on his current state (mood). Similarly, playing a game of one on one basketball with Joel Embiid results in one of two transtitions of state (mood) depending on his current state (mood). To do this, I initialized a variable with a random number from one to two, or one to three, when the previous condition is met. This condition checks to see which state or mood Joel Embiid is in before the stimulus or action. To generate the random numbers, I used the Math.random() function. I then used the Math.floor() function in conjuction with the Math.random() function to ensure that only integers were being generated. After having the random integer, I checked to see if it was one, two, or three, or one or two. After being categorized, the state (mood) is changed. For the stimuli and actions that have only one possible outcome, I simply checked what state (mood) Joel Embiid was in before and assigned a change in response to that. The corresponding states and transitions are shown in my state machine. If Joel Embiid does not eat for a long time (30 seconds), he gets hungry, regardless of what state he is in. Furthermore, when he is hungry for a long time (30 additional seconds), he gets sleepy. This is a result of two setTimeout() functions. Selecting a stimulus or action will prevent him from getting hungry or sleepy. This is a result of the clearTimeout() function that is called at the beginning of each button function. In addition, the timers from the two setTimeout() functions are reinstated upon each button press. </p>
+<h3> Information for Programmers</h3>
+<p> The states are stored in an array called moods. Values from 0 to 5 correspond to each of the states within the array. In addition, there is a variable called moodPointer. This is used to indicate which state Joel Embiid is currently in. All of the functions compare the moodPointer to a specific number to ensure that the correct transitions of state occur. Knowing this is crucial to expanding upon Joel Embiid. </p>
+</body>
+</html>

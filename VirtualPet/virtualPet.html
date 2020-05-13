@@ -1,0 +1,417 @@
+<html>
+<title> Suin Kim's Virtual Pet </title>
+<body style="background-image:url('background.PNG'); background-repeat:no-repeat; background-position: center;background-size: cover">
+<center>
+<h1> My Pet Joel Embiid </h1>
+<img id="joelMood" src="relaxedJoel.png" width="400px" height="400px"> 
+<br> </br>
+<p id="moodParagraph"> Joel Embiid is relaxed right now. </p>
+<table border="1"> <td> </td> <th> Stimulu/Actions </th> <td> </td>
+<tr> <td> <button onclick="feedButton()"> Feed </button>  </td> <td> <button onclick="sleepButton()"> Sleep </button> </td> <td> <button onclick="petButton()"> Pet </button> </td></tr>
+<tr> <td> <button onclick="engageInBanterButton()"> Engage In Banter </button> </td> <td> <button onclick="playOneOnOneButton()"> Play One On One </button> </td> <td> <button onclick="highFiveButton()"> High Five </button> </td></tr>
+</table>
+<br> <br>
+<a href="http://www.pages.drexel.edu/~sk3665/documentationPage.html"> Link to documentation page </a>
+</center>
+    
+<script type="text/Javascript">
+var moods = ["relaxedJoel.png", "hungryJoel.gif", "happyJoel.jpg", "sleepyJoel.jpg", "angryJoel.jpg", "sadJoel.jpg"];
+var moodPointer = 0;
+var timeOutEvent1;
+var timeOutEvent2;
+    
+timeOutEvent1 = setTimeout(timeOut1, 30000);
+timeOutEvent2 = setTimeout(timeOut2, 60000);    
+    
+function timeOut1()
+{
+    document.getElementById("joelMood").src=moods[1];
+    moodPointer = 1;
+    document.getElementById("moodParagraph").innerHTML = "After waiting for something to do, Joel Embiid got hungry.";
+}
+
+function timeOut2()
+{
+    document.getElementById("joelMood").src=moods[3];
+    moodPointer = 3;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid is now sleepy since he has not eaten anything for a long time.";
+}
+
+function feedButton()
+{
+clearTimeout(timeOutEvent1);
+clearTimeout(timeOutEvent2);
+timeOutEvent1 = setTimeout(timeOut1, 30000);
+timeOutEvent2 = setTimeout(timeOut2, 60000); 
+if (moodPointer == 0)
+    {
+    document.getElementById("joelMood").src=moods[0];
+    moodPointer = 0;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid is not hungry right now.";
+    }
+else if (moodPointer == 1)
+    {
+    document.getElementById("joelMood").src=moods[2];
+    moodPointer = 2;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid devours his food. He is now in a good mood.";
+    }
+else if (moodPointer == 2)
+    {
+    document.getElementById("joelMood").src=moods[2];
+    moodPointer = 2;
+    document.getElementById("moodParagraph").innerHTML = "Eating more food keeps Joel Embiid happy.";
+    }
+else if (moodPointer == 3)
+    {
+    document.getElementById("joelMood").src=moods[3];
+    moodPointer = 3;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too sleepy to eat.";
+    }
+else if (moodPointer == 4)
+    {
+    document.getElementById("joelMood").src=moods[0];
+    moodPointer = 0;
+    document.getElementById("moodParagraph").innerHTML = "At the sight of food, Joel Embiid calms down.";
+    }
+else if (moodPointer == 5)
+    {
+    document.getElementById("joelMood").src=moods[0];
+    moodPointer = 0; 
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid slowly reaches for the food. He starts to feel better.";
+    }  
+}
+    
+function sleepButton()
+{
+clearTimeout(timeOutEvent1);
+clearTimeout(timeOutEvent2);
+timeOutEvent1 = setTimeout(timeOut1, 30000);
+timeOutEvent2 = setTimeout(timeOut2, 60000); 
+if (moodPointer == 0)
+    {
+    document.getElementById("joelMood").src=moods[0];
+    moodPointer = 0;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid does not want to sleep right now.";
+    }
+else if (moodPointer == 1)
+    {
+    document.getElementById("joelMood").src=moods[1];
+    moodPointer = 1;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid wants to eat, not sleep.";
+    }
+else if (moodPointer == 2)
+    {
+    document.getElementById("joelMood").src=moods[2];
+    moodPointer = 2;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid does not want to sleep right now. He is still in a good mood.";
+    }
+else if (moodPointer == 3)
+    {
+    document.getElementById("joelMood").src=moods[2];
+    moodPointer = 2;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid falls into a deep slumber. He wakes up in a good mood.";
+    }
+else if (moodPointer == 4)
+    {
+    document.getElementById("joelMood").src=moods[0];
+    moodPointer = 0;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid takes a nap. He feels relaxed.";
+    }
+else if (moodPointer == 5)
+    {
+    document.getElementById("joelMood").src=moods[0];
+    moodPointer = 0;  
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid takes a nap. He is not sad anymore.";
+    }  
+}
+    
+function petButton()
+{
+clearTimeout(timeOutEvent1);
+clearTimeout(timeOutEvent2);
+timeOutEvent1 = setTimeout(timeOut1, 30000);
+timeOutEvent2 = setTimeout(timeOut2, 60000); 
+if (moodPointer == 0)
+    {
+    document.getElementById("joelMood").src=moods[4];
+    moodPointer = 4;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid hates being pet. He's a seven foot man, not a child.";
+    }
+else if (moodPointer == 1)
+    {
+    document.getElementById("joelMood").src=moods[4];
+    moodPointer = 4;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid hates being pet. He's a seven foot man, not a child.";
+    }
+else if (moodPointer == 2)
+    {
+    document.getElementById("joelMood").src=moods[4];
+    moodPointer = 4;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid hates being pet. He's a seven foot man, not a child.";
+    }
+else if (moodPointer == 3)
+    {
+    document.getElementById("joelMood").src=moods[4];
+    moodPointer = 4;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid hates being pet. He's a seven foot man, not a child.";
+    }
+else if (moodPointer == 4)
+    {
+    document.getElementById("joelMood").src=moods[4];
+    moodPointer = 4; 
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid hates being pet. He's a seven foot man, not a child.";
+    }
+else if (moodPointer == 5)
+    {
+    document.getElementById("joelMood").src=moods[4];
+    moodPointer = 4; 
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid hates being pet. He's a seven foot man, not a child.";
+    }  
+}
+
+function engageInBanterButton()
+{
+clearTimeout(timeOutEvent1);
+clearTimeout(timeOutEvent2);
+timeOutEvent1 = setTimeout(timeOut1, 30000);
+timeOutEvent2 = setTimeout(timeOut2, 60000); 
+if (moodPointer == 0)
+    {
+    var randomMood = Math.floor((Math.random() * 3) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[2];
+        moodPointer = 2;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid laughs at what you said.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[4];
+        moodPointer = 4;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid takes offense to what you said. He is now angry.";
+        }
+    else if (randomMood ==3)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid takes what you said personally. He is now sad.";
+        }
+    }
+else if (moodPointer == 1)
+    {
+    var randomMood = Math.floor((Math.random() * 2) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[4];
+        moodPointer = 4;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too hungry to deal with your banter. He is now angry.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too hungry to deal with your banter. He is now sad.";
+        }
+    }
+else if (moodPointer == 2)
+    {
+    var randomMood = Math.floor((Math.random() * 3) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[2];
+        moodPointer = 2;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid laughs at what you said.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[4];
+        moodPointer = 4;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid takes offense to what you said. He is now angry.";
+        }
+    else if (randomMood == 3)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid takes offense to what you said. He is now sad.";
+        }   
+    }
+else if (moodPointer == 3)
+    {
+    var randomMood = Math.floor((Math.random() * 2) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[4];
+        moodPointer = 4;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too sleepy to deal with your banter. He is now angry.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too sleepy to deal with your banter. He is now sad.";
+        }   
+    }
+else if (moodPointer == 4)
+    {
+    var randomMood = Math.floor((Math.random() * 2) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[4];
+        moodPointer = 4;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid was already angry. You managed to keep him angry with your banter.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid was already angry. After hearing what you said, he becomes sad.";
+        }    
+    }
+else if (moodPointer == 5)
+    {
+    var randomMood = Math.floor((Math.random() * 2) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[4];
+        moodPointer = 4;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid was already sad. After hearing what you said, he becomes angry.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid was already sad. You managed to keep him sad with your banter.";
+        }  
+    }  
+}
+    
+function playOneOnOneButton()
+{
+clearTimeout(timeOutEvent1);
+clearTimeout(timeOutEvent2);
+timeOutEvent1 = setTimeout(timeOut1, 30000);
+timeOutEvent2 = setTimeout(timeOut2, 60000); 
+if (moodPointer == 0)
+    {
+    var randomMood = Math.floor((Math.random() * 2) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[2];
+        moodPointer = 2;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid beats you in the one on one basketball game. As promised, you give him a blue gatorade as a reward. This makes him happy.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "You somehow beat Joel Embiid in the one on one basketball game. This makes him sad.";
+        }
+    }
+else if (moodPointer == 1)
+    {
+    document.getElementById("joelMood").src=moods[1];
+    moodPointer = 1;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too hungry to play a game of one on one basketball.";
+    }
+else if (moodPointer == 2)
+    {
+    var randomMood = Math.floor((Math.random() * 2) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[2];
+        moodPointer = 2;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid beats you in the one on one basketball game. As promised, you give him a blue gatorade as a reward. This makes him happy.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "You somehow beat Joel Embiid in the one on one basketball game. This makes him sad.";
+        }
+    }
+else if (moodPointer == 3)
+    {
+    document.getElementById("joelMood").src=moods[3];
+    moodPointer = 3;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too sleepy to play a game of one on one basketball.";
+    }
+else if (moodPointer == 4)
+    {
+    var randomMood = Math.floor((Math.random() * 2) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[2];
+        moodPointer = 2;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid beats you in the one on one basketball game. As promised, you give him a blue gatorade as a reward. This makes him happy.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "You somehow beat Joel Embiid in the one on one basketball game. This makes him sad.";
+        }
+    }
+else if (moodPointer == 5)
+    {
+    var randomMood = Math.floor((Math.random() * 2) + 1);
+    if (randomMood == 1)
+        {
+        document.getElementById("joelMood").src=moods[2];
+        moodPointer = 2;
+        document.getElementById("moodParagraph").innerHTML = "Joel Embiid beats you in the one on one basketball game. As promised, you give him a blue gatorade as a reward. This makes him happy.";
+        }
+    else if (randomMood == 2)
+        {
+        document.getElementById("joelMood").src=moods[5];
+        moodPointer = 5;
+        document.getElementById("moodParagraph").innerHTML = "You somehow beat Joel Embiid in the one on one basketball game. This makes him sad.";
+        }
+    }  
+}
+    
+function highFiveButton()
+{
+clearTimeout(timeOutEvent1);
+clearTimeout(timeOutEvent2);
+timeOutEvent1 = setTimeout(timeOut1, 30000);
+timeOutEvent2 = setTimeout(timeOut2, 60000); 
+if (moodPointer == 0)
+    {
+    document.getElementById("joelMood").src=moods[2];
+    moodPointer = 2;
+    document.getElementById("moodParagraph").innerHTML = "You give Joel Embiid a strong high five. This makes him happy.";
+    }
+else if (moodPointer == 1)
+    {
+    document.getElementById("joelMood").src=moods[1];
+    moodPointer = 1;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too hungry to high five you.";
+    }
+else if (moodPointer == 2)
+    {
+    document.getElementById("joelMood").src=moods[2];
+    moodPointer = 2;
+    document.getElementById("moodParagraph").innerHTML = "You give Joel Embiid a strong high five. This keeps him in a good mood.";
+    }
+else if (moodPointer == 3)
+    {
+    document.getElementById("joelMood").src=moods[3];
+    moodPointer = 3;
+    document.getElementById("moodParagraph").innerHTML = "Joel Embiid is too sleepy to high five you.";
+    }
+else if (moodPointer == 4)
+    {
+    document.getElementById("joelMood").src=moods[2];
+    moodPointer = 2;
+    document.getElementById("moodParagraph").innerHTML = "You give Joel Embiid a strong high five. This makes him happy.";
+    }
+else if (moodPointer == 5)
+    {
+    document.getElementById("joelMood").src=moods[2];
+    moodPointer = 2;
+    document.getElementById("moodParagraph").innerHTML = "You give Joel Embiid a strong high five. This makes him happy.";
+    }  
+}
+</script>
+</body>
+</html>
